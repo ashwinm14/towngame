@@ -459,7 +459,7 @@ export default function AdminDashboard() {
                         })()}
                       </div>
                       
-                      <div className="font-bangers text-xl flex items-center gap-3">
+                      <div className="font-bangers text-xl flex flex-wrap items-center gap-3">
                         {product?.status === 'on_sale' ? (
                           <span className="px-3 py-1 bg-[#34c759] border-2 border-black text-white shadow-[2px_2px_0px_#000] transform rotate-2">LIVE!</span>
                         ) : (
@@ -467,6 +467,9 @@ export default function AdminDashboard() {
                         )}
                         <span className="px-3 py-1 bg-[#ffeb3b] border-2 border-black shadow-[2px_2px_0px_#000] transform -rotate-2">
                           SALES: {product?.sales_count || 0}
+                        </span>
+                        <span className="px-3 py-1 bg-[#32ade6] text-white border-2 border-black shadow-[2px_2px_0px_#000] transform rotate-1">
+                          REV: ₹{(product?.sales_count || 0) * (product?.price || 0)}
                         </span>
                       </div>
                     </div>
